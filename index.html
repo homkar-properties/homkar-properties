@@ -3,229 +3,335 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homkar Properties | Official Site</title>
-    
-    <!-- WEBSITE ICON: Links your logo style as the tab icon -->
-    <link rel="icon" type="image/png" href="logo.png">
-
+    <title>Homkar Properties | Architectural Planning & Civil Engineering</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
-
+        /* Premium Luxury Aesthetic Styling */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: #fcf8f2; /* Luxury cream background */
-            font-family: 'Lora', serif;
-            color: #333333; /* Darker tone for overall content text */
-            line-height: 1.7;
-            padding: 20px;
+            background-color: #fcfbf9;
+            color: #2c2a29;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #1a1918;
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            height: 50px;
+            object-fit: contain;
+        }
+
+        nav a {
+            color: #dfdcd6;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #c5a880;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(26, 25, 24, 0.6), rgba(26, 25, 24, 0.6)), url('property1.jpg') no-repeat center center/cover;
+            height: 60vh;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
-            min-height: 100vh;
-        }
-
-        /* Top Navigation Header Styling */
-        .header-nav {
-            width: 100%;
-            max-width: 600px;
-            background-color: #ffffff;
-            padding: 15px 25px;
-            border-radius: 40px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 40px;
-        }
-
-        .header-nav a {
-            text-decoration: none;
-            color: #5a1818;
-            font-weight: 700;
-            font-size: 0.9rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            padding: 8px 16px;
-            transition: all 0.3s ease;
-        }
-
-        .header-nav a.active {
-            background-color: #5a1818;
-            color: #ffffff;
-            border-radius: 20px;
-        }
-
-        /* Branding Section */
-        .branding-container {
             text-align: center;
-            margin-bottom: 35px;
+            color: #ffffff;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #f0ede9;
             max-width: 600px;
         }
 
-        .logo-img {
-            width: 60px;
-            height: auto;
+        /* Section Container Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            position: relative;
+            color: #1a1918;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: #c5a880;
+            margin: 10px auto 0 auto;
+        }
+
+        /* About Us Section */
+        .about-text {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #534f4c;
+        }
+        
+        .about-text p {
             margin-bottom: 15px;
         }
 
-        .author-tag {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #333333;
-            margin-bottom: 5px;
-        }
-
-        .main-title {
-            font-family: 'Cinzel', serif;
-            font-size: 2.2rem;
-            color: #5a1818;
-            letter-spacing: 2px;
-            line-height: 1.2;
-            margin-bottom: 25px;
-        }
-
-        .divider {
-            border: none;
-            border-top: 1px dashed #dcd1c4;
-            width: 100%;
-            margin-bottom: 30px;
-        }
-
-        .intro-text {
-            font-size: 1.05rem;
-            color: #555555;
-            text-align: center;
-            margin-bottom: 35px;
-            padding: 0 10px;
-        }
-
-        /* Portfolio 2-Column Grid Setup */
-        .portfolio-grid {
-            width: 100%;
-            max-width: 600px;
+        /* Property Showcase Grid */
+        .grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
-        .project-card {
-            background-color: #e6e1d5; /* Elegant tan card background */
-            border-radius: 18px;
+        .portfolio-item {
+            background-color: #ffffff;
+            border: 1px solid #eaddcd;
+            border-radius: 4px;
             overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(197, 168, 128, 0.15);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .portfolio-info {
+            padding: 20px;
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #1a1918;
+        }
+
+        .portfolio-info p {
+            color: #706964;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Us Section & Business Card */
+        .contact-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
         }
 
-        .gallery-item {
+        .card-wrapper {
+            max-width: 500px;
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border: 1px solid #eaddcd;
         }
 
-        .project-caption {
-            padding: 15px 10px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: #333333;
-            line-height: 1.4;
-        }
-
-        /* New Full-Width Business Card Call-To-Action */
-        .business-card-container {
+        .card-wrapper img {
             width: 100%;
-            max-width: 600px;
-            display: flex;
-            justify-content: center;
-            padding: 20px 0 40px 0;
-            margin-top: 25px;
+            display: block;
         }
 
-        .business-card-image {
-            width: 100%;
-            height: auto;
-            border-radius: 14px;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        .contact-details {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            color: #2c2a29;
+        }
+
+        .contact-details p {
+            margin-bottom: 12px;
+        }
+        
+        .contact-details a {
+            transition: color 0.3s;
+        }
+        
+        .contact-details a:hover {
+            color: #a4875e !important;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1918;
+            color: #969089;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive Fixes for Mobile Devices */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
 <body>
 
     <!-- Header Navigation Bar -->
-    <nav class="header-nav">
-        <a href="#about">About Us</a>
-        <a href="#projects" class="active">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Homkar Properties Logo">
+        </div>
+        <nav>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
 
-    <!-- Branding Section -->
-    <div class="branding-container">
-        <!-- Main Logo Display -->
-        <img class="logo-img" src="logo.png" alt="Homkar Properties Logo">
-        
-        <p class="author-tag">By: Shairaj Homkar</p>
-        <h1 class="main-title">HOMKAR PROPERTIES</h1>
-        
-        <hr class="divider">
-        
-        <p class="intro-text">
-            Explore our portfolio of expertly engineered properties, luxury layouts, and premium residential spaces completed across Solapur.
-        </p>
+    <!-- Hero Showcase Header -->
+    <div class="hero">
+        <h1>Homkar Properties</h1>
+        <p>Premium Structural Layout Designs & Architectural Planning Excellence</p>
     </div>
 
-    <!-- Main Project Grid (6 Active Cards) -->
-    <main class="portfolio-grid" id="projects">
-        
-        <!-- Card 1 -->
-        <div class="project-card">
-            <img class="gallery-item" src="property1.jpg" alt="Architectural Exterior Homkar Project">
-            <p class="project-caption">Architectural Exterior Homkar Project</p>
+    <!-- About Us Section -->
+    <section id="about" class="container">
+        <h2>About Us</h2>
+        <div class="about-text">
+            <p>Welcome to <strong>Homkar Properties</strong>. Based in Solapur, Maharashtra, we specialize in high-end consulting civil engineering and creative architectural planning configurations. We bridge structural integrity with premium luxury design, translating raw layout visions into beautifully planned residential properties.</p>
+            <p>Our work focuses heavily on custom turnkey layouts, structural mapping accuracy, and elite aesthetic concepts tailored precisely to match modern construction benchmarks. From deep structural calculations to perfect plot layouts, we turn dream architectural sketches into concrete realities.</p>
         </div>
+    </section>
 
-        <!-- Card 2 -->
-        <div class="project-card">
-            <img class="gallery-item" src="property2.jpg" alt="Modern Structural Homkar Design">
-            <p class="project-caption">Modern Structural Homkar Design</p>
+    <!-- Portfolio Project Section -->
+    <section id="portfolio" class="container">
+        <h2>Completed Layout Projects</h2>
+        <div class="grid">
+            <div class="portfolio-item">
+                <img src="property1.jpg" alt="Premium Layout Project 1">
+                <div class="portfolio-info">
+                    <h3>Premium Residential Concept 1</h3>
+                    <p>Custom structural design featuring modern elevations and spatial planning optimizing open airflow layout concepts.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="property2.jpg" alt="Premium Layout Project 2">
+                <div class="portfolio-info">
+                    <h3>Luxury Layout Concept 2</h3>
+                    <p>Sophisticated premium plot arrangement incorporating strategic road accessibility mapping and pristine green spacing lines.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="property3.jpg" alt="Premium Layout Project 3">
+                <div class="portfolio-info">
+                    <h3>Modern Bungalow Structure 3</h3>
+                    <p>Precision-engineered layout plan boasting luxury design parameters tailored carefully for high-end residential clients.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="property4.jpg" alt="Premium Layout Project 4">
+                <div class="portfolio-info">
+                    <h3>Contemporary Blueprint 4</h3>
+                    <p>An architecturally advanced multi-story layout format designed with meticulous space optimization algorithms.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="property5.jpg" alt="Premium Layout Project 5">
+                <div class="portfolio-info">
+                    <h3>Elite Residential Row-House 5</h3>
+                    <p>A flawless combination of strong structural column integrity and high-aesthetic modern exterior facing patterns.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="property6.jpg" alt="Premium Layout Project 6">
+                <div class="portfolio-info">
+                    <h3>Executive Commercial Layout 6</h3>
+                    <p>Advanced engineering scheme detailing robust framework specs for integrated business and mixed-use urban spaces.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Card 3 -->
-        <div class="project-card">
-            <img class="gallery-item" src="property3.jpg" alt="Residential Development Solapur">
-            <p class="project-caption">Residential Development Solapur</p>
+    <!-- Contact Us Section -->
+    <section id="contact" class="container" style="background-color: #f5f2ed; max-width: 100%;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <div class="card-wrapper">
+                    <img src="busines_card.jpg" alt="Homkar Properties Business Card">
+                </div>
+                <div class="contact-details">
+                    <p><strong>Location:</strong> Solapur, Maharashtra, India</p>
+                    <p><strong>Phone:</strong> <a href="tel:+919890661699" style="color: #1a1918; font-weight: bold; text-decoration: underline;">+91 98906 61699</a></p>
+                    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/homkar_properties/" target="_blank" style="color: #c5a880; font-weight: bold; text-decoration: underline;">@homkar_properties</a></p>
+                    <p style="margin-top: 15px; font-size: 0.95rem; color: #534f4c;">Connect with our engineering desk today for specialized architectural design layouts and consultations.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Card 4 -->
-        <div class="project-card">
-            <img class="gallery-item" src="property4.jpg" alt="Homkar Construction Site View">
-            <p class="project-caption">Homkar Construction Site View</p>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="project-card">
-            <img class="gallery-item" src="property5.jpg" alt="Luxury Layout Completed Project">
-
-            <p class="project-caption">Luxury Layout Completed Project</p>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="project-card">
-            <img class="gallery-item" src="property6.jpg" alt="Classic Engineering Homkar Design">
-            <p class="project-caption">Classic Engineering Homkar Design</p>
-        </div>
-
-    </main>
-
-    <!-- Unified Footer Business Card (Replaces old individual placeholders) -->
-    <div class="business-card-container" id="contact">
-        <img class="business-card-image" src="busines_card.jpg" alt="Homkar Properties Business Card">
-    </div>
+    <!-- Footer Space -->
+    <footer>
+        <p>&copy; 2026 HOMKAR PROPERTIES. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
+
